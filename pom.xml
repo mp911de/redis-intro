@@ -11,6 +11,7 @@
 
     <modules>
         <module>standalone</module>
+        <module>hibernate-ogm</module>
     </modules>
 
     <properties>
