@@ -24,11 +24,11 @@ public class GeoTest extends AbstractLettuceTest {
 
 	@BeforeEach
 	public void before() throws Exception {
+
 		StatefulRedisConnection<String, String> connection = redisClient.connect();
 		connection.sync().flushall();
 
 		commands = connection.sync();
-
 	}
 
 	@Test
@@ -37,7 +37,6 @@ public class GeoTest extends AbstractLettuceTest {
 		commands.geoadd("key", 48.8588376, 2.2773454, "Paris");
 		commands.geoadd("key", 47.3774336, 8.4665034, "Zürich");
 		commands.geoadd("key", 50.9571608, 6.8268958, "Köln");
-
 	}
 
 	@Test

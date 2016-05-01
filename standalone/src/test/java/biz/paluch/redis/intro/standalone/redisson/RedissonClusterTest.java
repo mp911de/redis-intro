@@ -33,5 +33,4 @@ public class RedissonClusterTest {
 
 		redisson.shutdown();
 	}
-
 }

@@ -5,7 +5,6 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.boot.test.WebIntegrationTest;
-import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
@@ -24,6 +23,7 @@ public class RedisCacheTest {
 	@Test
 	public void runTest() throws Exception {
 
+		System.out.println("curl -i http://localhost:8080/data");
 		System.out.println("Press any key to exit...");
 		System.in.read();
 	}

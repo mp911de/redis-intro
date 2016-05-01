@@ -22,11 +22,11 @@ public class HashTest extends AbstractLettuceTest {
 
 	@BeforeEach
 	public void before() throws Exception {
+
 		StatefulRedisConnection<String, String> connection = redisClient.connect();
 		connection.sync().flushall();
 
 		commands = connection.sync();
-
 	}
 
 	@Test
@@ -53,7 +53,6 @@ public class HashTest extends AbstractLettuceTest {
 		map.put("field3", "value3");
 
 		assertThat(commands.hget("key", "field")).isEqualTo("value");
-
 	}
 
 	@Test
@@ -63,7 +62,6 @@ public class HashTest extends AbstractLettuceTest {
 		commands.hdel("key", "field");
 
 		assertThat(commands.hget("key", "field")).isNull();
-
 	}
 
 	@Test
@@ -78,6 +76,5 @@ public class HashTest extends AbstractLettuceTest {
 		commands.hmset("key", map);
 
 		assertThat(commands.hlen("key")).isEqualTo(3);
-
 	}
 }

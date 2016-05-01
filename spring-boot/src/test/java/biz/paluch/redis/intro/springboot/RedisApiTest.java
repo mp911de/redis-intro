@@ -1,35 +1,35 @@
-package biz.paluch.redis.intro.springboot.session;
+package biz.paluch.redis.intro.springboot;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.boot.test.WebIntegrationTest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
  * @author Mark Paluch
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = SpringSessionTest.Config.class)
-@WebIntegrationTest(value = "server.port=8181")
-public class SpringSessionTest {
+@SpringApplicationConfiguration(classes = RedisApiTest.Config.class)
+public class RedisApiTest {
+
+	@Autowired RedisTemplate<String, String> redisTemplate;
 
 	@Test
-	public void runTest() throws Exception {
+	public void getSet() throws Exception {
+		redisTemplate.delete("hash");
 
-		System.out.println("curl -i -b cookies -c cookies http://localhost:8181/session");
-		System.out.println("Press any key to exit...");
-		System.in.read();
+		redisTemplate.opsForHash().put("hash", "field", "value");
 	}
 
+
 	@Configuration
-	@SpringBootApplication
 	static class Config {
 
 		@Bean
@@ -38,8 +38,9 @@ public class SpringSessionTest {
 		}
 
 		@Bean
-		RedisTemplate<Object, Object> redisTemplate() {
-			RedisTemplate<Object, Object> redisTemplate = new RedisTemplate<>();
+		RedisTemplate<String, String> redisTemplate() {
+			RedisTemplate<String, String> redisTemplate = new RedisTemplate<>();
+			redisTemplate.setDefaultSerializer(new StringRedisSerializer());
 			redisTemplate.setConnectionFactory(redisConnectionFactory());
 			return redisTemplate;
 		}

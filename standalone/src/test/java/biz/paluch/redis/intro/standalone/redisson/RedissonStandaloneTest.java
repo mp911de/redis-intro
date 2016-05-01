@@ -32,5 +32,4 @@ public class RedissonStandaloneTest {
 
 		redisson.shutdown();
 	}
-
 }

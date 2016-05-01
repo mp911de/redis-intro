@@ -23,7 +23,7 @@ public class LettuceStandaloneTest {
 	@Test
 	void connectStandalone() {
 
-		RedisClient redisClient = RedisClient.create(RedisURI.create("localhost", 6379));
+		RedisClient redisClient = RedisClient.create(RedisURI.create("redis://localhost:6379"));
 
 		StatefulRedisConnection<String, String> connection = redisClient.connect();
 

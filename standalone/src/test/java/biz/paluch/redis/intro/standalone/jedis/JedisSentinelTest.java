@@ -35,5 +35,4 @@ public class JedisSentinelTest {
 
 		pool.close();
 	}
-
 }

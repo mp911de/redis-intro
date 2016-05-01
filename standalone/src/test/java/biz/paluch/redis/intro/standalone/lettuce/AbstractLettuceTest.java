@@ -1,5 +1,7 @@
 package biz.paluch.redis.intro.standalone.lettuce;
 
+import java.util.concurrent.TimeUnit;
+
 import org.junit.gen5.api.AfterAll;
 import org.junit.gen5.api.BeforeAll;
 import org.junit.gen5.junit4.runner.JUnit5;
@@ -24,6 +26,6 @@ public class AbstractLettuceTest {
 
 	@AfterAll
 	public static void afterAll() {
-		redisClient = RedisClient.create(RedisURI.create("localhost", 6379));
+		redisClient.shutdown(0, 0, TimeUnit.MILLISECONDS);
 	}
 }

@@ -23,7 +23,6 @@ public class ListTest extends AbstractLettuceTest {
 		connection.sync().flushall();
 
 		commands = connection.sync();
-
 	}
 
 	@Test
@@ -40,7 +39,6 @@ public class ListTest extends AbstractLettuceTest {
 		commands.rpush("key", "item1", "item2", "item3");
 
 		assertThat(commands.lrange("key", 0, 1)).containsOnly("item1", "item2");
-
 	}
 
 	@Test
@@ -50,7 +48,6 @@ public class ListTest extends AbstractLettuceTest {
 		commands.lrem("key", 1, "item2");
 
 		assertThat(commands.lrange("key", 0, -1)).containsOnly("item1", "item3");
-
 	}
 
 	@Test
@@ -59,6 +56,5 @@ public class ListTest extends AbstractLettuceTest {
 		commands.rpush("key", "item1", "item2", "item3");
 
 		assertThat(commands.llen("key")).isEqualTo(3);
-
 	}
 }

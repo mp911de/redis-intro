@@ -33,5 +33,4 @@ public class RedissonSentinelTest {
 
 		redisson.shutdown();
 	}
-
 }
