@@ -12,6 +12,7 @@
     <modules>
         <module>standalone</module>
         <module>hibernate-ogm</module>
+        <module>spring-boot</module>
     </modules>
 
     <properties>
