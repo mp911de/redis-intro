@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ExpensiveService {
 
+	@Cacheable(cacheNames = "expensive")
 	public String calculateSomethingExpensive() throws InterruptedException {
 		Thread.sleep(3000);
 		return "42\r\n\r\n";

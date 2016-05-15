@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
@@ -29,6 +30,7 @@ public class SpringSessionTest {
 	}
 
 	@Configuration
+	@EnableRedisHttpSession
 	@SpringBootApplication
 	static class Config {
 
