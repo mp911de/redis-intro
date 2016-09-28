@@ -6,9 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
-import org.junit.gen5.api.Test;
-import org.junit.gen5.junit4.runner.JUnit5;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisSentinelPool;
@@ -16,7 +14,6 @@ import redis.clients.jedis.JedisSentinelPool;
 /**
  * @author Mark Paluch
  */
-@RunWith(JUnit5.class)
 public class JedisSentinelTest {
 
 	@Test

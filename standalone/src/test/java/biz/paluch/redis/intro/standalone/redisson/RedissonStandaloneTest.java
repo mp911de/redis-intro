@@ -1,20 +1,16 @@
 package biz.paluch.redis.intro.standalone.redisson;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
-import org.junit.gen5.api.Disabled;
-import org.junit.gen5.api.Test;
-import org.junit.gen5.junit4.runner.JUnit5;
-import org.junit.runner.RunWith;
-import org.redisson.Config;
+import org.junit.jupiter.api.Test;
 import org.redisson.Redisson;
-import org.redisson.RedissonClient;
-import org.redisson.core.RMap;
+import org.redisson.api.RMap;
+import org.redisson.api.RedissonClient;
+import org.redisson.config.Config;
 
 /**
  * @author Mark Paluch
  */
-@RunWith(JUnit5.class)
 public class RedissonStandaloneTest {
 
 	@Test

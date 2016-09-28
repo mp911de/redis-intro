@@ -4,16 +4,13 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import org.junit.gen5.api.AfterAll;
-import org.junit.gen5.api.BeforeAll;
-import org.junit.gen5.api.Test;
-import org.junit.gen5.junit4.runner.JUnit5;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author Mark Paluch
  */
-@RunWith(JUnit5.class)
 public class NewspaperTest {
 
 	private static EntityManagerFactory entityManagerFactory;

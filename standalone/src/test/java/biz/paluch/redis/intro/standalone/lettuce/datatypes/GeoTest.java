@@ -5,15 +5,14 @@ import static org.assertj.core.api.AssertionsForInterfaceTypes.*;
 import java.util.List;
 import java.util.Set;
 
-import org.junit.gen5.api.BeforeEach;
-import org.junit.gen5.api.Test;
-
-import biz.paluch.redis.intro.standalone.lettuce.AbstractLettuceTest;
-
 import com.lambdaworks.redis.GeoArgs;
 import com.lambdaworks.redis.GeoWithin;
 import com.lambdaworks.redis.api.StatefulRedisConnection;
 import com.lambdaworks.redis.api.sync.RedisGeoCommands;
+
+import biz.paluch.redis.intro.standalone.lettuce.AbstractLettuceTest;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author Mark Paluch

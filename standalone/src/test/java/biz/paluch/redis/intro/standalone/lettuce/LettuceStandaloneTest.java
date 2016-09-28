@@ -4,9 +4,7 @@ import static org.assertj.core.api.Assertions.*;
 
 import java.util.concurrent.TimeUnit;
 
-import org.junit.gen5.api.Test;
-import org.junit.gen5.junit4.runner.JUnit5;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 
 import com.lambdaworks.redis.RedisClient;
 import com.lambdaworks.redis.RedisURI;
@@ -17,7 +15,6 @@ import com.lambdaworks.redis.api.sync.RedisCommands;
  * @author Mark Paluch
  */
 
-@RunWith(JUnit5.class)
 public class LettuceStandaloneTest {
 
 	@Test

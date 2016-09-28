@@ -2,10 +2,8 @@ package biz.paluch.redis.intro.standalone.lettuce;
 
 import java.util.concurrent.TimeUnit;
 
-import org.junit.gen5.api.AfterAll;
-import org.junit.gen5.api.BeforeAll;
-import org.junit.gen5.junit4.runner.JUnit5;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 
 import com.lambdaworks.redis.RedisClient;
 import com.lambdaworks.redis.RedisURI;
@@ -14,7 +12,6 @@ import com.lambdaworks.redis.RedisURI;
  * @author Mark Paluch
  */
 
-@RunWith(JUnit5.class)
 public class AbstractLettuceTest {
 
 	protected static RedisClient redisClient;
