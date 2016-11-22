@@ -4,7 +4,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
@@ -18,7 +17,7 @@ import org.springframework.test.context.junit4.SpringRunner;
  * @author Mark Paluch
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(properties = "server.port=8181", webEnvironment = WebEnvironment.DEFINED_PORT)
+@SpringBootTest
 public class RedisRepositoryTest {
 
 	@Autowired ArticleRepository articleRepository;
