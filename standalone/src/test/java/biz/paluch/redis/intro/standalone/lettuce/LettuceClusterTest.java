@@ -4,11 +4,10 @@ import static org.assertj.core.api.Assertions.*;
 
 import java.util.concurrent.TimeUnit;
 
+import io.lettuce.core.RedisURI;
+import io.lettuce.core.cluster.RedisClusterClient;
+import io.lettuce.core.cluster.api.StatefulRedisClusterConnection;
 import org.junit.jupiter.api.Test;
-
-import com.lambdaworks.redis.RedisURI;
-import com.lambdaworks.redis.cluster.RedisClusterClient;
-import com.lambdaworks.redis.cluster.api.StatefulRedisClusterConnection;
 
 /**
  * @author Mark Paluch

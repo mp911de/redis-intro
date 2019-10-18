@@ -2,11 +2,10 @@ package biz.paluch.redis.intro.standalone.lettuce.datatypes;
 
 import static org.assertj.core.api.Assertions.*;
 
+import io.lettuce.core.api.StatefulRedisConnection;
+import io.lettuce.core.api.sync.RedisSetCommands;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import com.lambdaworks.redis.api.StatefulRedisConnection;
-import com.lambdaworks.redis.api.sync.RedisSetCommands;
 
 import biz.paluch.redis.intro.standalone.lettuce.AbstractLettuceTest;
 

@@ -5,11 +5,10 @@ import static org.assertj.core.api.AssertionsForInterfaceTypes.*;
 import java.util.HashMap;
 import java.util.Map;
 
+import io.lettuce.core.api.StatefulRedisConnection;
+import io.lettuce.core.api.sync.RedisHashCommands;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import com.lambdaworks.redis.api.StatefulRedisConnection;
-import com.lambdaworks.redis.api.sync.RedisHashCommands;
 
 import biz.paluch.redis.intro.standalone.lettuce.AbstractLettuceTest;
 

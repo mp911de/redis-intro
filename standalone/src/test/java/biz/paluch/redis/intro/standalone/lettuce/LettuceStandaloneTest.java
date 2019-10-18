@@ -4,17 +4,16 @@ import static org.assertj.core.api.Assertions.*;
 
 import java.util.concurrent.TimeUnit;
 
+import io.lettuce.core.RedisClient;
+import io.lettuce.core.RedisURI;
+import io.lettuce.core.api.StatefulRedisConnection;
+import io.lettuce.core.api.sync.RedisCommands;
 import org.junit.jupiter.api.Test;
 
-import com.lambdaworks.redis.RedisClient;
-import com.lambdaworks.redis.RedisURI;
-import com.lambdaworks.redis.api.StatefulRedisConnection;
-import com.lambdaworks.redis.api.sync.RedisCommands;
 
 /**
  * @author Mark Paluch
  */
-
 public class LettuceStandaloneTest {
 
 	@Test

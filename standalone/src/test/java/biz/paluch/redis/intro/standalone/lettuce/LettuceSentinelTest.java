@@ -6,10 +6,10 @@ import java.util.concurrent.TimeUnit;
 
 import org.junit.jupiter.api.Test;
 
-import com.lambdaworks.redis.RedisClient;
-import com.lambdaworks.redis.RedisURI;
-import com.lambdaworks.redis.RedisURI.Builder;
-import com.lambdaworks.redis.api.StatefulRedisConnection;
+import io.lettuce.core.RedisClient;
+import io.lettuce.core.RedisURI;
+import io.lettuce.core.api.StatefulRedisConnection;
+
 
 /**
  * @author Mark Paluch
@@ -20,7 +20,7 @@ public class LettuceSentinelTest {
 	@Test
 	void connectSentinel() {
 
-		RedisURI redisURI = Builder.sentinel("localhost", 26379, "mymaster").withSentinel("localhost", 26380)
+		RedisURI redisURI = RedisURI.Builder.sentinel("localhost", 26379, "mymaster").withSentinel("localhost", 26380)
 				.withSentinel("localhost", 26381).build();
 
 		RedisClient redisClient = RedisClient.create(redisURI);

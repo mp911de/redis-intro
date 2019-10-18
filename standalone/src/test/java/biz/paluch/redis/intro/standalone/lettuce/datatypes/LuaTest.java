@@ -2,11 +2,10 @@ package biz.paluch.redis.intro.standalone.lettuce.datatypes;
 
 import static org.assertj.core.api.AssertionsForInterfaceTypes.*;
 
-import com.lambdaworks.redis.ScriptOutputType;
-import com.lambdaworks.redis.api.StatefulRedisConnection;
-import com.lambdaworks.redis.api.sync.RedisCommands;
-
 import biz.paluch.redis.intro.standalone.lettuce.AbstractLettuceTest;
+import io.lettuce.core.ScriptOutputType;
+import io.lettuce.core.api.StatefulRedisConnection;
+import io.lettuce.core.api.sync.RedisCommands;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

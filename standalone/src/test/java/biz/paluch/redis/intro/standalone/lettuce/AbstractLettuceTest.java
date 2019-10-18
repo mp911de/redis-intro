@@ -2,11 +2,11 @@ package biz.paluch.redis.intro.standalone.lettuce;
 
 import java.util.concurrent.TimeUnit;
 
+import io.lettuce.core.RedisClient;
+import io.lettuce.core.RedisURI;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 
-import com.lambdaworks.redis.RedisClient;
-import com.lambdaworks.redis.RedisURI;
 
 /**
  * @author Mark Paluch

@@ -3,6 +3,7 @@ package biz.paluch.redis.intro.springboot.repository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -37,22 +38,9 @@ public class RedisRepositoryTest {
 		System.out.println(loaded);
 	}
 
-	@Configuration
-	@EnableRedisRepositories
+	@SpringBootApplication
 	static class Config {
 
-		@Bean
-		RedisConnectionFactory redisConnectionFactory() {
-			return new LettuceConnectionFactory();
-		}
-
-		@Bean
-		RedisTemplate<String, String> redisTemplate() {
-			RedisTemplate<String, String> redisTemplate = new RedisTemplate<>();
-			redisTemplate.setDefaultSerializer(new StringRedisSerializer());
-			redisTemplate.setConnectionFactory(redisConnectionFactory());
-			return redisTemplate;
-		}
 	}
 
 }

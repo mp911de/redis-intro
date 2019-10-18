@@ -29,21 +29,8 @@ public class SpringSessionTest {
 		System.in.read();
 	}
 
-	@Configuration
-	@EnableRedisHttpSession
 	@SpringBootApplication
 	static class Config {
 
-		@Bean
-		RedisConnectionFactory redisConnectionFactory() {
-			return new LettuceConnectionFactory();
-		}
-
-		@Bean
-		RedisTemplate<Object, Object> redisTemplate() {
-			RedisTemplate<Object, Object> redisTemplate = new RedisTemplate<>();
-			redisTemplate.setConnectionFactory(redisConnectionFactory());
-			return redisTemplate;
-		}
 	}
 }
